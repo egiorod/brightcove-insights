@@ -22,7 +22,7 @@
     }
     </style><video-js
       data-account="6051814392001"
-      data-player="tH0ZljdGI"
+      data-player="q5wXjgSBk"
       data-embed="default"
       controls=""
       data-video-id="6335420473112"
@@ -31,7 +31,14 @@
       class="vjs-fluid"></video-js>
       </div>
       <script
-      src="https://players.brightcove.net/6051814392001/tH0ZljdGI_default/index.min.js">
+      src="https://players.brightcove.net/6051814392001/q5wXjgSBk_default/index.min.js">
+      </script>
+      <script>
+        videojs.getPlayer('myPlayerID').ready(function() {
+          var myPlayer = this;
+          //Set the viewer id for Brightcove analytics
+          myPlayer.bcAnalytics.client.setUser('grodriguez@brightcove.com');
+        });
       </script>
     </div>
   </div>
