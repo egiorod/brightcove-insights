@@ -11,16 +11,42 @@
   <div class="main__banner">
       <img src="assets/bc_emmy_2023_v1.png">
   </div>
-  <div class="intro__tag">Onboarding Team</div>
+  <div class="intro__tag"> Onboarding Team </div>
   <h1 style="text-align: center; color: #AA6C7E;"> Brightcove Insights </h1>
-  <div class="center__containr">
-    <div class="center__contnt">
-      <div style="max-width: 960px;">
-    <style>
-    video-js.video-js.vjs-fluid:not(.vjs-audio-only-mode) {
-      padding-top: 56.25%;
-    }
-    </style><video-js
+    <div class="center__containr">
+      <div class="center__contnt">
+        <div style="max-width: 960px;">
+        <style> 
+        video-js.video-js.vjs-fluid:not(.vjs-audio-only-mode) { 
+          padding-top: 56.25%;
+        }
+        </style><video-js 
+        id="myPlayerID"
+        data-account="6051814392001"
+        data-player="q5wXjgSBk"
+        data-embed="default"
+        controls=""
+        data-video-id="6335420473112"
+        data-playlist-id=""
+        data-application-id=""
+        class="vjs-fluid"></video-js>
+      </div>
+      <script src="https://players.brightcove.net/6051814392001/q5wXjgSBk_default/index.min.js"></script>
+      <script>
+      // Esperar a que el documento esté completamente cargado
+      document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar el reproductor de video
+        var player = videojs('myPlayerID');
+        // Evento 'ready' del reproductor de video
+        player.ready(function() {
+            // Obtener el reproductor de video
+            var myPlayer = this;
+            // Configurar el usuario para las analíticas de Brightcove
+            myPlayer.bcAnalytics.client.setUser('grodriguez@brightcove.com');
+          });
+        });
+        </script>
+    <!-- <video-js
       data-account="6051814392001"
       data-player="q5wXjgSBk"
       data-embed="default"
@@ -39,7 +65,7 @@
           //Set the viewer id for Brightcove analytics
           myPlayer.bcAnalytics.client.setUser('grodriguez@brightcove.com');
         });
-      </script>
+      </script> -->
     </div>
   </div>
   <div class="bottom__banner">
